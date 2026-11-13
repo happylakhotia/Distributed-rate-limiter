@@ -1,0 +1,16 @@
+package handlers
+
+import (
+	"encoding/json"
+	"net/http"
+)
+
+func Health(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+}
+
+func Test(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(map[string]string{"message": "You made it through!"})
+}
+
+
